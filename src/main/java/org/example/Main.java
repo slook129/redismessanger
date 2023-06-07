@@ -12,6 +12,7 @@ public class Main {
             String login = auth.Autorize(jedis);
             Actions acts = new Actions(login, jedis);
             acts.Act();
+            
         }
     }
 }

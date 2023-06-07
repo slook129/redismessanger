@@ -32,7 +32,6 @@ public class Actions {
     }
     public void ShowUsers(){
         Set<String> names=jedis.keys("*");
-        long usersCnt = jedis.dbSize();
         System.out.println("There is " + names.size() + " users");
         Iterator<String> it = names.iterator();
         while (it.hasNext()) {
