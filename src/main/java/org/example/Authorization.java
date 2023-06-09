@@ -35,6 +35,10 @@ public class Authorization {
         }
         System.out.println("Insert login");
         String login = in.next();
+        while(!jedis.exists(login)){
+            System.out.println("Login not found, try again");
+            login = in.next();
+        }
         System.out.println("Insert password");
         String password = in.next();
         while(!Objects.equals(jedis.hget(login, "password"), password)){
